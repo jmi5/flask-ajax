@@ -1,6 +1,5 @@
 #!flask-ajax/bin/python
 from flask import Flask, jsonify, request, session
-# from multiprocessing import Value
 app = Flask(__name__)
 app.secret_key = 'joshsupersecret'
 
@@ -38,4 +37,5 @@ def increment_count():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # app.run(host="0.0.0.0", port=int("80"))
 
