@@ -7,7 +7,7 @@
 (function() {
 
 	"use strict";
-
+	// console.log('doing stuff')
 	// Methods/polyfills.
 
 		// classList | (c) @remy | github.com/remy/polyfills | rem.mit-license.org
@@ -39,9 +39,13 @@
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							"{{ url_for('static', filename='images/bg01.jpg') }}": 'center',
-							"{{ url_for('static', filename='images/bg02.jpg') }}": 'center',
-							"{{ url_for('static', filename='images/bg03.jpg') }}": 'center'
+							// "{{ url_for('static', filename='images/bg01.jpg') }}": 'center',
+							// "{{ url_for('static', filename='images/bg02.jpg') }}": 'center',
+							// "{{ url_for('static', filename='images/bg03.jpg') }}": 'center'
+
+							'static/images/bg01.jpg': 'center',
+							'static/images/bg02.jpg': 'center',
+							'static/images/bg03.jpg': 'center'
 						},
 
 					// Delay.
@@ -139,36 +143,36 @@
 
 			// Events.
 			// Note: If you're *not* using AJAX, get rid of this event listener.
-			// 	$form.addEventListener('submit', function(event) {
-            //
-			// 		event.stopPropagation();
-			// 		event.preventDefault();
-            //
-			// 		// Hide message.
-			// 			$message._hide();
-            //
-			// 		// Disable submit.
-			// 		// 	$submit.disabled = true;
-			// 			$submit.disabled = false;
-            //
-			// 		// Process form.
-			// 		// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
-			// 		// but there's enough here to piece together a working AJAX submission call that does.
-			// 			window.setTimeout(function() {
-            //
-			// 				// Reset form.
-			// 					$form.reset();
-            //
-			// 				// Enable submit.
-			// 					$submit.disabled = false;
-            //
-			// 				// Show message.
-			// 					$message._show('success', 'Thank you!');
-			// 					//$message._show('failure', 'Something went wrong. Please try again.');
-            //
-			// 			}, 750);
-            //
-			// 	});
+				$form.addEventListener('submit', function(event) {
+
+					// event.stopPropagation();
+					// event.preventDefault();
+
+					// Hide message.
+						$message._hide();
+
+					// Disable submit.
+						$submit.disabled = true;
+						// $submit.disabled = false;
+
+					// Process form.
+					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
+					// but there's enough here to piece together a working AJAX submission call that does.
+						window.setTimeout(function() {
+
+							// Reset form.
+							// 	$form.reset();
+
+							// Enable submit.
+							// 	$submit.disabled = false;
+
+							// Show message.
+							// 	$message._show('success', 'Thank you!');
+								//$message._show('failure', 'Something went wrong. Please try again.');
+
+						}, 750);
+
+				});
 
 		})();
 
