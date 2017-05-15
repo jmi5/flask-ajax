@@ -1,5 +1,8 @@
 # flask-ajax
-Working on getting this http://codehandbook.org/python-flask-jquery-ajax-post/ to work.
+
+This repo contains two projects:
+- Working on getting this http://codehandbook.org/python-flask-jquery-ajax-post/ to work.
+- Getting a public facing TIP endpoint so people can demo entering an IP and UA into a box and sending to TIP. 
 
 ### Notes
 - At the beginning of the project, run `virtualenv env`.
