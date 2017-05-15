@@ -15,11 +15,13 @@ import requests
 # json2html.json2html.convert(json=resp.content)
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
+# app = Flask(__name__, template_folder='', static_folder='')
 
 @app.route('/', methods=['GET'])
 def my_form():
-    return render_template("my-form.html")
+    # return render_template("my-form.html")
+    return render_template("index.html")
 
 @app.route('/', methods=['POST'])
 def my_form_post():

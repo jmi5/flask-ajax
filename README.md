@@ -12,4 +12,6 @@ This repo contains two projects:
 - Heroku only officially supports two runtimes: https://devcenter.heroku.com/articles/python-runtimes
 - Need a Procfile
 
+### Static Assets with Flask
 
+Referred to: http://exploreflask.com/en/latest/static.html
