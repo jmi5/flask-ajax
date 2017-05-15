@@ -1,4 +1,48 @@
 <!DOCTYPE html>
+
+<script>
+!function (co, h, e, s, i, o, n) {
+    h.documentElement.className += ' preampjs fusejs';
+    n.k = e; co._Cohesion = n; co._Preamp = { k: s, start: new Date() }; co._Fuse = { k: i };
+    co[e] = co[e] || function () { (co[e].q = co[e].q || []).push([].slice.call(arguments)) };
+    co[s] = co[s] || function () { (co[s].q = co[s].q || []).push([].slice.call(arguments)) };
+    co[i] = co[i] || function () { (co[i].q = co[i].q || []).push([].slice.call(arguments)) };
+    h.addEventListener('DOMContentLoaded', function () {
+        co.setTimeout(function () {
+            var u = h.documentElement.className; h.documentElement.className = u.replace(/ ?preampjs| ?fusejs/g, '')
+        }, o);
+        co._Preamp.docReady = co._Fuse.docReady = !0
+    }); var v = co.analytics = co.analytics || []; if (!v.initialize) {
+        if (v.invoked) { co.console && console.error && console.error('Cohesion snippet included twice') } else {
+            v.invoked = true; v.methods = ['trackSubmit', 'trackClick', 'trackLink', 'trackForm', 'pageview', 'identify',
+            'reset', 'group', 'track', 'ready', 'alias', 'debug', 'page', 'once', 'off', 'on']; v.factory = function (r) {
+                return function () { var w = Array.prototype.slice.call(arguments); w.unshift(r); v.push(w); return v }
+            };
+            for (var x = 0; x < v.methods.length; x++) { var y = v.methods[x]; v[y] = v.factory(y) }
+        }
+    } var z = h.createElement('script');
+    z.async = 1; z.src = 'https://cdn.cohesionapps.com/cohesion/cohesion-frontier.min.js'; h.head.appendChild(z);
+}
+(window, document, 'cohesion', 'preamp', 'fuse', 3e3, {
+    analytics: { apiKey: '999ef067-d4c0-4739-ae02-a11578c46359.e1445869-6b18-46da-ac93-64366db4d29d' },
+    preamp: { siteId: '33KA1R8rLJeBlECgnFpUz8' },
+    fuse: { leases: [{ pool: 'KeJkH29tUJQQLEtCBz9spi' }] }
+})
+</script>
+
+
+<script>
+    function myFunction () {
+        analytics.track("ElementClicked",{
+            "@type":"redventures.usertracking.v3.ElementClicked",
+            "webElement" : {
+                "text" : "Josh's TIP Submit Button"
+            }
+            })
+    }
+</script>
+
+
 <html lang="en">
 <body>
     <h1>Enter an IP and a User Agent and click "Send" to see your TIP attributes</h1>
@@ -14,7 +58,7 @@
             <input style="width:200px" type="text" name="useragent" placeholder="useragent" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36">
         <!--<br>-->
         </p>
-        <input type="submit" name="my-form" value="Send">
+        <input onclick="myFunction()" type="submit" name="my-form" value="Send">
     </form>
     
 
