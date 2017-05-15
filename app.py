@@ -30,10 +30,10 @@ def my_form_post():
     ip = request.form['ip']
     useragent = request.form['useragent']
     # Parse out IP and UA and give some defaults
-    # if ip == '':
-    #     ip = '209.251.238.55'
-    # if useragent == '':
-    #     useragent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+    if ip == '':
+        ip = request.remote_addr
+    if useragent == '':
+        useragent = request.user_agent
     resp = requests.get(url='https://tip.nimbus.tagular.com/lookup', params={'ua': useragent, 'ip': ip, 'key': key})
     return resp.content
 
