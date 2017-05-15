@@ -31,7 +31,12 @@ def my_form_post():
     useragent = request.form['useragent']
     # Parse out IP and UA and give some defaults
     if ip == '':
-        ip = request.remote_addr
+        # Edit: see http://esd.io/blog/flask-apps-heroku-real-ip-spoofing.html
+        # ip = request.remote_addr
+        if not request.headers.getlist("X-Forwarded-For"):
+            ip = request.remote_addr
+        else:
+            ip = request.headers.getlist("X-Forwarded-For")[0]
     if useragent == '':
         useragent = request.user_agent
     resp = requests.get(url='https://tip.nimbus.tagular.com/lookup', params={'ua': useragent, 'ip': ip, 'key': key})
